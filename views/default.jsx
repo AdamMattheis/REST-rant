@@ -15,4 +15,4 @@ function Def (html) {
       
 
 
-modules.exports = Def
+module.exports = Def
