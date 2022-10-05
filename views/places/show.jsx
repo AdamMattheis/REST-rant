@@ -1,14 +1,27 @@
 const React = require('react')
 const Def = require('../default')
 
-function show () {
+function show (data) {
     return (
         <Def>
           <main>
-            <h1>Show Page</h1>
+            <h1>{ data.place.name }</h1>
+            <img src={`${data.place.pic}`}/>
+            <h2 className='main'>{ data.place.cuisines }</h2>
+            <h4 className='main'>{ data.place.city },{ data.place.state }</h4>
+            <h5 className='main'>
+                Rating
+                <input className="form-control" id="rating"/>
+                </h5>
+            <h5 className='main'>
+                Comments
+                <input className="form-control" id="comments"/>
+                </h5>
           </main>
         </Def>
     )
 }
 
 module.exports = show
+
+
