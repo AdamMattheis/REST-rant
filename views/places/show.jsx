@@ -12,11 +12,20 @@ function show (data) {
             <h5 className='main'>
                 Rating
                 <input className="form-control" id="rating"/>
-                </h5>
+            </h5>
             <h5 className='main'>
                 Comments
                 <input className="form-control" id="comments"/>
-                </h5>
+            </h5>
+                <a href={`/places/${data.id}/edit`} className="btn btn-warning"> 
+                Edit
+                </a>  
+            <form method="POST" action={`/places/${data.id}?_method=DELETE`}> 
+                <button type="submit" className="btn btn-danger">
+                    Delete
+                </button>
+            </form>     
+  
           </main>
         </Def>
     )
