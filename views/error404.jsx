@@ -5,8 +5,9 @@ function error404 () {
     return (
       <Def>
           <main>
-              <h1>404: PAGE NOT FOUND</h1>
-              <p>Oops, sorry, we can't find this page!</p>
+            <a>
+              <img src="https://i0.wp.com/learn.onemonth.com/wp-content/uploads/2017/08/1-10.png?fit=845%2C503&ssl=1"/>
+            </a>
           </main>
       </Def>
     )
