@@ -29,4 +29,5 @@ mongoose.connection.on("connected", (err, res) => {
 
 
 module.exports.Place = require('./places')
+module.exports.Comment = require('./comment')
 
