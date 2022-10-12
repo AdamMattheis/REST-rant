@@ -2,7 +2,26 @@ const React = require('react')
 const Def = require('../default')
 
 function show (data) {
-    let message = ""
+    let comments = (
+        <h3 className="inactive">
+            No comments yet!
+        </h3>
+    )
+    if (data.place.comments.length) {
+        comments = data.place.comments.map(c => {
+          return (
+            <div className="border">
+              <h2 className="rant">{c.rant ? 'Rant!' : 'Rave!'}</h2>
+              <h4>{c.content}</h4>
+              <h3>
+                <stong>- {c.author}</stong>
+              </h3>
+              <h4>Rating: {c.stars}</h4>
+            </div>
+          )
+        })
+      }
+    let message = ''
     if (data.message) {
         message = (
             <h4 className="alert-danger">
@@ -30,6 +49,7 @@ function show (data) {
             <h5 className='main'>
                 Comments
                 <input className="form-control" id="comments"/>
+                {comments}
             </h5>
             <h3 className='main'>
                 {data.place.showEstablished()}
@@ -54,3 +74,8 @@ function show (data) {
 module.exports = show
 
 
+
+
+
+    
+   
