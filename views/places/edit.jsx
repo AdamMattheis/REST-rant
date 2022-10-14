@@ -45,6 +45,13 @@ function edit_form (data) {
                 name="cuisines" 
                 required />
               </div>
+              <div className="form-group">
+                <label htmlFor="founded">Founded</label>
+                <input className="form-control" 
+                  id="founded" 
+                  name="founded" 
+                  value={data.place.founded}/>
+        </div>
               <input className="btn btn-primary" type="submit" defaultValue="Add Place" />
             </form>
           </main>
@@ -53,3 +60,5 @@ function edit_form (data) {
 }
 
 module.exports = edit_form
+
+
