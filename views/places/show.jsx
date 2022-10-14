@@ -21,19 +21,9 @@ function show (data) {
           )
         })
       }
-    let message = ''
-    if (data.message) {
-        message = (
-            <h4 className="alert-danger">
-                {data.message}
-            </h4>
-        )
-    }
     return (
         <Def>
           <main>
-            <h1>Add a New Place</h1>
-            {message}
             <h1>{ data.place.name }</h1>
             <img src={`${data.place.pic}`}/>
             <h2 className='main'>
@@ -43,12 +33,35 @@ function show (data) {
                 Located in { data.place.city }, { data.place.state }
             </h4>
             <h5 className='main'>
-                Rating
-                <input className="form-control" id="rating"/>
-            </h5>
-            <h5 className='main'>
-                Comments
-                <input className="form-control" id="comments"/>
+                <form action={`/places/${data.place.id}/comment`} method="POST">
+                Rant
+                <input 
+                type="checkbox"
+                kind="boolean"
+                name="rant"
+                value="yes"
+                className="main"
+                step="0.5" />
+                Author
+                <input 
+                type="text"
+                className="form-control" 
+                name="author"
+                />
+                Stars
+                <input 
+                type="number"
+                className="form-control"
+                name="stars" />
+                Comment
+                <input 
+                type="text"
+                className="form-control"
+                name="content" />
+                <button type="submit" className="btn btn-warning">
+                    Add Comment
+                </button>
+                </form>
                 {comments}
             </h5>
             <h3 className='main'>
@@ -57,6 +70,7 @@ function show (data) {
             <h4 className='main'>
                 Serving {data.place.cuisines}
             </h4>
+            <div className='main'>
                 <a href={`/places/${data.id}/edit`} className="btn btn-warning"> 
                 Edit
                 </a>  
@@ -64,8 +78,8 @@ function show (data) {
                 <button type="submit" className="btn btn-danger">
                     Delete
                 </button>
-            </form>     
-  
+            </form> 
+            </div>    
           </main>
         </Def>
     )
