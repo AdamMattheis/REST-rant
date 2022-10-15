@@ -124,13 +124,13 @@ router.get('/:id/edit', (req, res) => {
 })
 
 //rant delete
-router.delete('/:id/comment/:id', (req, res) => {
-  db.Comment.findByIdAndDelete(req.params.id)
-  .then(comment => {
-      res.redirect('/places')
+router.delete('/:id/comment/:commentId', (req, res) => {
+  db.Comment.findByIdAndDelete(req.params.commentId)
+  .then(() => {
+      res.redirect(`/places/${req.params.id}`)
   })
   .catch(err => {
-      console.log('err2', err)
+      console.log('err', err)
       res.render('error404')
   })
 })
