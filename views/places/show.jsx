@@ -3,7 +3,7 @@ const Def = require('../default')
 
 function show (data) {
     let comments = (
-        <h3 className="inactive">
+        <h3 className="inactive, main">
             No comments yet!
         </h3>
     )
@@ -40,9 +40,9 @@ function show (data) {
                 <stong>- {c.author}</stong>
               </h3>
               <h4>Rating: {c.stars}</h4>
-              {/* <form method="POST" action={`/places/${data.place.id}/comment/${c.id}?_method=DELETE`}>
+              <form method="POST" action={`/places/${data.place.id}/comment/${c.id}?_method=DELETE`}>
               <input type="submit" className="btn btn-danger" value="Delete Comment" />
-              </form> */}
+              </form>
             </div>
           )
         })
@@ -85,7 +85,9 @@ function show (data) {
                 <input 
                 type="number"
                 className="form-control"
-                name="stars" />
+                name="stars" 
+                min='0'
+                max='5'/>
                 Comment
                 <input 
                 type="text"
