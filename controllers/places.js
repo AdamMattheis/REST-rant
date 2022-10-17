@@ -138,8 +138,7 @@ router.delete('/:id/comment/:commentId', (req, res) => {
   
 
 
-//places/634635411f63b0ea56d2af6c
-//places/634a2351fd84ce9dbd235925
+
 
 
 module.exports = router
