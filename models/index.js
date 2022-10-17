@@ -1,7 +1,7 @@
 require('dotenv').config();
 const mongoose = require('mongoose');
 //mongoose.connect(process.env.MONGO_URI);
-mongoose.connect("mongodb://localhost:27017/rest-rant", {
+mongoose.connect("mongodb+srv://AdamMattheis:Winchester@cluster1.obi8miz.mongodb.net/test", {
 
   useNewUrlParser: "true",
   useUnifiedTopology: "true"
