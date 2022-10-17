@@ -3,6 +3,18 @@ const router = require('express').Router()
 const db = require('../models')
 
 
+//seed
+router.get('/', (req, res) => {
+  router.insertMany(places)
+    .then(res.redirect('/places'))
+
+}
+
+
+
+
+)
+
 //index
 router.get('/', (req, res) => {
     db.Place.find()
